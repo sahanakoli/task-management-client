@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
     return (
         <div>
-            <div className="hero w-11/12 mx-auto h-[500px] mt-6" style={{ backgroundImage: 'url(https://i.ibb.co/cNLSDMS/task.jpg)' }}>
+            <div className="hero h-[500px] mt-6 mb-16" style={{ backgroundImage: 'url(https://i.ibb.co/cNLSDMS/task.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-white ">
                     <div>
