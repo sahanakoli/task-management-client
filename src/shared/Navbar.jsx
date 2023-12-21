@@ -1,12 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from '../assets/task logo.png';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
 
     const navLink = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/addProduct">About Us</NavLink></li>
-        <li><NavLink to="/myCart">Rules</NavLink></li>
+        <li><NavLink to="/aboutUs">About Us</NavLink></li>
+        <li><NavLink to="/rules">Rules</NavLink></li>
         
     </>
 
@@ -54,7 +54,7 @@ const Navbar = () => {
         <button onClick={handleSignOut} className="btn btn-primary text-white">Sign Out</button>
         : */}
         <Link to="/login">
-            <button className="btn btn-primary text-white">Login</button>
+            <button className="btn bg-violet-900 text-white">Login</button>
         </Link>
       {/* } */}
                 </div>
