@@ -35,6 +35,7 @@ const NewTask = () => {
     };
     return (
         <div>
+            <h2 className=" text-3xl font-semibold">Create New Task</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* Title */}
                 <div className="form-control w-1/2 lg:w-full my-6">

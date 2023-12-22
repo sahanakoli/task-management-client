@@ -48,8 +48,8 @@ const PostCard = ({post}) => {
                     <p>Priority: {priority}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <Link to={`/update/${_id}`}><button className="btn btn-primary">Update</button></Link>
-                        <button onClick={() => handleDelete(_id)} className="btn btn-primary">Delete</button>
+                        <Link to={`/update/${_id}`}><button className="btn bg-violet-900 text-white">Update</button></Link>
+                        <button onClick={() => handleDelete(_id)} className="btn bg-violet-900 text-white">Delete</button>
                     </div>
                 </div>
             </div>

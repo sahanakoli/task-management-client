@@ -12,7 +12,6 @@ import Home from "../pages/Home/Home/Home";
 import Rules from "../pages/Home/Rules/Rules";
 import Faq from "../pages/Home/FAQ/FAQ";
 import ErrorPage from "../component/ErrorPage/ErrorPage";
-import Profile from "../pages/Dashboard/Profile/Profile";
 import Update from "../component/Update/Update";
 
 
@@ -66,10 +65,6 @@ import Update from "../component/Update/Update";
           path:'dragAndDrop',
           element:<DragAndDrop></DragAndDrop>
         },
-        {
-          path:'profile',
-          element:<Profile></Profile>
-        }
       ]
     },
   ]);
