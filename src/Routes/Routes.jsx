@@ -10,14 +10,17 @@ import PreviousTask from "../pages/Dashboard/PreviousTask/PreviousTask";
 import DragAndDrop from "../pages/Dashboard/DragAndDrop/DragAndDrop";
 import Home from "../pages/Home/Home/Home";
 import Rules from "../pages/Home/Rules/Rules";
-import AboutUs from "../pages/Home/AboutUs/AboutUs";
 import Faq from "../pages/Home/FAQ/FAQ";
+import ErrorPage from "../component/ErrorPage/ErrorPage";
+import Profile from "../pages/Dashboard/Profile/Profile";
+import Update from "../component/Update/Update";
 
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
@@ -36,18 +39,20 @@ import Faq from "../pages/Home/FAQ/FAQ";
             element:<SignUp></SignUp>
         },
         {
-            path:'aboutUs',
-            element:<AboutUs></AboutUs>
-        },
-        {
             path:'faq',
             element:<Faq></Faq>
+        },
+        {
+          path:'update/:id',
+          element:<Update></Update>,
+          loader: ({params}) => fetch(`https://task-management-server-black-omega.vercel.app/posts/${params.id}`)
         }
       ]
     },
     {
       path: "dashboard",
       element: <Dashboard></Dashboard>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
           path:'newTask',
@@ -60,6 +65,10 @@ import Faq from "../pages/Home/FAQ/FAQ";
         {
           path:'dragAndDrop',
           element:<DragAndDrop></DragAndDrop>
+        },
+        {
+          path:'profile',
+          element:<Profile></Profile>
         }
       ]
     },

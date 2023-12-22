@@ -4,7 +4,7 @@ import { GoDotFill } from "react-icons/go";
 const Rules = () => {
     return (
         <div>
-            <h2 className=" text-3xl font-bold underline text-center mt-16">Task Management Rules</h2>
+            <h2 className=" text-3xl font-bold underline text-center mt-16">Task Vista Rules</h2>
             <div className="mt-16 mb-6">
                 <div className="ml-20">
                     <div className="flex gap-2">

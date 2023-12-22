@@ -1,0 +1,28 @@
+[
+    {
+        "id":"1",
+        "benefit":"Customizable Workflows",
+        "details":"Tailor TaskVista to your unique workflow with customizable task categories, labels, and tags. Create a personalized system that aligns with your specific organizational needs."
+    },
+    {
+        "id": "2",
+        "benefit":"Real-Time Progress Tracking",
+        "details":"Stay informed with real-time progress tracking. Monitor task completion, identify bottlenecks, and make informed decisions to keep projects on track."
+    },
+    {
+        "id": "3",
+        "benefit":" Improved Time Management",
+        "details":"Effectively manage your time by setting deadlines and prioritizing tasks. TaskVista helps you allocate time efficiently, ensuring that you focus on what matters most."
+    },
+    {
+        "id": "4",
+        "benefit":"User-Friendly Interface",
+        "details":"Enjoy a user-friendly interface designed for simplicity and efficiency. TaskVista prioritizes a positive user experience, making task management intuitive and accessible for all users."
+    },
+    {
+        "id": "5",
+        "benefit":"Accessibility Anytime, Anywhere",
+        "details":"Access TaskVista from desktop or mobile devices, ensuring you can manage your tasks on the go. Stay connected with your work no matter where you are."
+    }
+    
+]

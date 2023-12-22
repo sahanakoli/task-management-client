@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 
 const NewTask = () => {
@@ -80,6 +81,7 @@ const NewTask = () => {
                                 <option value="low">Low</option>
                                 <option value="moderate">Moderate</option>
                                 <option value="high">High</option>
+                                <MdKeyboardArrowDown className=" text-end" />
                             </select>
                 </div>
 
