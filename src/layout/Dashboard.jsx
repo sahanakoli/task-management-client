@@ -1,8 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {  FaHouse,  FaSignsPost  } from "react-icons/fa6";
-import { CgProfile } from "react-icons/cg";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Dashboard = () => {
+    const {user} = useContext(AuthContext);
     return (
         <div>
             <div className="flex">
@@ -11,17 +13,24 @@ const Dashboard = () => {
                     <ul className="menu p-4">
                                 <>
                                     <li>
-                                        <NavLink to="/dashboard/myProfile">
-                                            <CgProfile />
-                                            My Profile</NavLink></li>
+                                    <div className="avatar">
+                                        <div className="mask mask-squircle w-12 h-12">
+                                            <img src={user.photoURL} alt="" />
+                                        </div>
+                                    </div>   
+                                    </li>
                                     <li>
-                                        <NavLink to="/dashboard/addPost">
+                                        <NavLink to="/dashboard/newTask">
                                             <FaSignsPost />
-                                            Add Post </NavLink></li>
+                                            New Task </NavLink></li>
                                     <li>
-                                        <NavLink to="/dashboard/myPost">
+                                        <NavLink to="/dashboard/previousTask">
                                             <FaSignsPost />
-                                            My Posts</NavLink></li>
+                                            Previous Task</NavLink></li>
+                                    <li>
+                                        <NavLink to="/dashboard/dragAndDrop">
+                                            <FaSignsPost />
+                                            Drag And Drop</NavLink></li>
 
                                 </>                        
 
