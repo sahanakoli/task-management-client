@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import SocialLogin from "./SocialLogin";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const SignUp = () => {
     const { register,reset, handleSubmit, formState: { errors } } = useForm();
-    const {createUser, updateUserProfile} = useAuth();
+    const {createUser, updateUserProfile} = useContext(AuthContext);
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
 
@@ -95,7 +97,7 @@ const SignUp = () => {
                             </div>
                             <p className='ml-16 '>Already have an account? <Link to='/login' className=' text-blue-300'>Login</Link></p>
                             <div className='divider'></div>
-                            {/* <SocialLogin></SocialLogin> */}
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                     <div className="ml-10 mt-10 md:mt-10 lg:mt-0 lg:w-1/2">
