@@ -2,14 +2,16 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
 import Main from "../layout/Main";
-import Home from "../pages/Home/Home";
-import Rules from "../pages/Rules/Rules";
 import Login from "../pages/login/Login";
 import SignUp from "../shared/SignUp";
 import Dashboard from "../layout/Dashboard";
 import NewTask from "../pages/Dashboard/NewTask/NewTask";
 import PreviousTask from "../pages/Dashboard/PreviousTask/PreviousTask";
 import DragAndDrop from "../pages/Dashboard/DragAndDrop/DragAndDrop";
+import Home from "../pages/Home/Home/Home";
+import Rules from "../pages/Home/Rules/Rules";
+import AboutUs from "../pages/Home/AboutUs/AboutUs";
+import Faq from "../pages/Home/FAQ/FAQ";
 
 
   const router = createBrowserRouter([
@@ -32,6 +34,14 @@ import DragAndDrop from "../pages/Dashboard/DragAndDrop/DragAndDrop";
         {
             path:'signUp',
             element:<SignUp></SignUp>
+        },
+        {
+            path:'aboutUs',
+            element:<AboutUs></AboutUs>
+        },
+        {
+            path:'faq',
+            element:<Faq></Faq>
         }
       ]
     },

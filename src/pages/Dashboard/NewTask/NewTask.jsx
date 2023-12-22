@@ -1,35 +1,34 @@
 import { useForm } from "react-hook-form";
-// import Swal from "sweetalert2";
-// import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const NewTask = () => {
     const { register, handleSubmit } = useForm();
-    // const axiosSecure = useAxiosSecure();
+    const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
         console.log(data)
         
-        if(data.success){
             // now send the post data to the server with the image url
-            const addPost = {
+            const newTask = {
                 title: data.title,
                 description: data.description,
                 deadlines: data.deadlines,
                 priority: data.priority
             }
-            console.log(addPost)
-            // const postRes = await axiosSecure.post('/posts', addPost);
-            // console.log(postRes.data)
-            // if(postRes.data.insertedId){
-            //     // show success popup
-            //     Swal.fire({
-            //         position: "top-end",
-            //         icon: "success",
-            //         title: 'Post create successfully',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //       });
-            // }
+            console.log(newTask)
+            const postRes = await axiosSecure.post('/posts', newTask);
+            console.log(postRes.data)
+            if(postRes.data.insertedId){
+                // show success popup
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: 'Task create successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            
         }
         console.log('with url', data);
     };
@@ -77,7 +76,7 @@ const NewTask = () => {
                     <label className="label">
                         <span className="label-text">Priority</span>
                     </label>
-                    <select type="text" placeholder='Level' name="priority"   className="input w-full input-bordered " required>
+                    <select type="text" placeholder='Level' {...register('priority', { required: true })}   className="input w-full input-bordered " required>
                                 <option value="low">Low</option>
                                 <option value="moderate">Moderate</option>
                                 <option value="high">High</option>

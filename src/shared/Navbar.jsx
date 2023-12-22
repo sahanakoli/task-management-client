@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/logo.png';
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
 
@@ -7,16 +9,18 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/aboutUs">About Us</NavLink></li>
         <li><NavLink to="/rules">Rules</NavLink></li>
+        <li><NavLink to="/faq">FAQ</NavLink></li>
+
         
     </>
 
-    // const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    // const handleSignOut = () => {
-    //     logOut()
-    //         .then()
-    //         .catch()
-    // }
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     return (
         <div>
@@ -31,7 +35,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img className="w-16 h-12" src={logo} alt="" />
-                    <a className=" normal-case text-xl font-semibold ml-4">Task Management</a>
+                    <a className=" normal-case text-xl font-semibold ml-4">Task Vista</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -39,24 +43,15 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* {
-                        user ?
-                            <div className=" flex-row lg:flex justify-center items-center mr-4 gap-2">
-                                <p className=" text-lg font-semibold">{user?.displayName}</p>
-                                <img className=" w-12 h-12 rounded-full" src={user?.photoURL ? user.photoURL : `https://i.ibb.co/D9wWRM6/olivia.jpg`} alt="" />
-                            </div>
-                            :
-                            <div>
-                            </div>
-                    } */}
-                    {/* { */}
-        {/* user ?
+                    
+                    {
+        user ?
         <button onClick={handleSignOut} className="btn btn-primary text-white">Sign Out</button>
-        : */}
+        :
         <Link to="/login">
             <button className="btn bg-violet-900 text-white">Login</button>
         </Link>
-      {/* } */}
+      }
                 </div>
             </div>
         </div>
