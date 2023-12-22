@@ -42,10 +42,10 @@ const PostCard = ({post}) => {
             <div className="card w-[300px] h-[400px] bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">Title: {title}</h2>
-                    <p>Description: {description}</p>
+                    <p><span className=" text-sm font-medium">Description:</span> {description}</p>
                     <div className="flex gap-6">
-                    <p>Deadline: {deadlines}</p>
-                    <p>Priority: {priority}</p>
+                    <p className=" text-sm font-medium">Deadline: {deadlines}</p>
+                    <p className=" text-sm font-medium">Priority: {priority}</p>
                     </div>
                     <div className="card-actions justify-end">
                         <Link to={`/update/${_id}`}><button className="btn bg-violet-900 text-white">Update</button></Link>
